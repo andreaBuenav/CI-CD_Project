@@ -35,11 +35,18 @@ jobs:
         java-version: '23'
         distribution: 'temurin'
         cache: maven
+
+    - name: Verify chromedriver
+      run: |
+              ls -l ./drivers/chromedriver
+              ./drivers/chromedriver --version
+    - name: Give chromedriver executable permissions
+      run: chmod +x ./drivers/chromedriver
+
     - name: Run tests with URL parameter
       run: mvn test -Durl="https://www.saucedemo.com/"
 
-    - name: Give chromedriver executable permissions
-      run: chmod +x ./drivers/chromedriver
+
       
       
     - name: Build with Maven
