@@ -34,14 +34,18 @@ jobs:
         java-version: '23'
         distribution: 'temurin'
         cache: maven
+        
     - name: Checkout code
       uses: actions/checkout@v2
+      
     - name: List files in the repository
       run: ls -alh
+      
     - name: Set up Chrome and chromedriver
       uses: browser-actions/setup-chrome@v1
       with:
           chrome-version: 'latest'
+          
     - name: Give chromedriver executable permissions
       run: chmod +x ./drivers/chromedriver
       
@@ -55,10 +59,10 @@ jobs:
     - name: Build with Maven
       id: build
       run: mvn clean
+
     - name: Run tests
       if: steps.build.outcome == 'success'
-      run: |
-        mvn -DbrowserName=${{ github.event.inputs.browserName || 'chrome' }} verify
+      run: mvn -DbrowserName=${{ github.event.inputs.browserName || 'chrome' }} verify
       
     - name: Get Allure history
       uses: actions/checkout@v3
