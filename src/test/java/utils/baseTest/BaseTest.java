@@ -14,8 +14,8 @@ public class BaseTest {
 
 //Method to open the browser and go to the page we want to test
     MainDriver driver;
-    @BeforeMethod(alwaysRun = true)
     @Step("Opening the Website")
+    @BeforeMethod(alwaysRun = true)
     @Parameters({"url"})
     public void beforeMethod(String url){
         driver = new MainDriver();
