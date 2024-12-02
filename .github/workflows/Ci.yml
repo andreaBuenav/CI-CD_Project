@@ -39,6 +39,8 @@ jobs:
         java-version: '23'
         distribution: 'temurin'
         cache: maven
+    - name: Run tests with URL parameter
+      run: mvn test -Durl=${{ inputs.url }}
 
     - name: Give chromedriver executable permissions
       run: chmod +x ./drivers/chromedriver
