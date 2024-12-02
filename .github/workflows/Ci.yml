@@ -36,6 +36,8 @@ jobs:
         cache: maven
     - name: Checkout code
       uses: actions/checkout@v2
+    - name: List files in the repository
+      run: ls -alh
     - name: Set up Chrome and chromedriver
       uses: browser-actions/setup-chrome@v1
       with:
