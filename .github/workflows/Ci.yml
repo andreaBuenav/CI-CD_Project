@@ -20,6 +20,11 @@ on:
         required: false
         type: string
         default: 'chrome'
+      url:
+      description: url
+      required: true
+      type: string
+      default: 'https://www.saucedemo.com/'
 
 jobs:
   build:
