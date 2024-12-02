@@ -34,6 +34,14 @@ jobs:
         java-version: '23'
         distribution: 'temurin'
         cache: maven
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Set up Chrome and chromedriver
+      uses: browser-actions/setup-chrome@v1
+      with:
+          chrome-version: 'latest'
+    - name: Give chromedriver executable permissions
+      run: chmod +x ./drivers/chromedriver
       
     - name: Run tests with URL parameter
       run: mvn test -Durl=https://www.saucedemo.com/
