@@ -36,12 +36,17 @@ jobs:
         distribution: 'temurin'
         cache: maven
 
+    - name: Rename chromedriver.exe to chromedriver
+      run: |
+              mv ./drivers/chromedriver.exe ./drivers/chromedriver
+    - name: Give chromedriver executable permissions
+      run: chmod 755 ./drivers/chromedriver
+
     - name: Verify chromedriver
       run: |
               ls -l ./drivers/chromedriver
               ./drivers/chromedriver --version
-    - name: Give chromedriver executable permissions
-      run: chmod +x ./drivers/chromedriver
+
 
     - name: Run tests with URL parameter
       run: mvn test -Durl="https://www.saucedemo.com/"
