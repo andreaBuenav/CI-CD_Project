@@ -4,10 +4,11 @@
         <listener class-name="utils.Listener"></listener>
     </listeners>
 
-    <parameter name="url" value="https://www.saucedemo.com/"></parameter>
     <parameter name="titleT1" value="Thank you for your order!"></parameter>
 
     <test name="test2">
+        <parameter name="url" value="https://www.saucedemo.com/"></parameter>
+
         <classes>
             <class name="com.globant.PurchaseItemsTest"></class>
             <class name="com.globant.RemoveItemTest"></class>
