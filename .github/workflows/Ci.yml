@@ -13,6 +13,13 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+  workflow_dispatch:
+    inputs:
+      browserName:
+        description: 'Browser type'
+        required: false
+        type: string
+        default: 'chrome'
 
 jobs:
   build:
@@ -29,11 +36,17 @@ jobs:
         cache: maven
     - name: Run tests with URL parameter
       run: mvn test -Durl=https://www.saucedemo.com/
+      
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+      
     - name: Build with Maven
       id: build
       run: mvn clean
+    - name: Run tests
+      if: steps.build.outcome == 'success'
+      run: mvn -DbrowserName=${{ inputs.browserName || 'CHROME' }} verify
+      
     - name: Get Allure history
       uses: actions/checkout@v3
       if: steps.build.outcome == 'success'
@@ -41,6 +54,7 @@ jobs:
       with:
           ref: gh-pages
           path: gh-pages
+ 
     - name: Allure report action
       uses: simple-elf/allure-report-action@master
       if: steps.build.outcome == 'success'
