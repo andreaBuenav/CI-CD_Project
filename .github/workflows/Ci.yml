@@ -54,7 +54,8 @@ jobs:
       run: mvn clean
     - name: Run tests
       if: steps.build.outcome == 'success'
-      run: mvn -DbrowserName=${{ inputs.browserName || 'CHROME' }} verify
+      run: |
+        mvn -DbrowserName=${{ github.event.inputs.browserName || 'chrome' }} verify
       
     - name: Get Allure history
       uses: actions/checkout@v3
