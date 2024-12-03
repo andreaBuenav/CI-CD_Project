@@ -14,7 +14,7 @@ public class MainDriver {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless");
 
-        String browserType = System.getenv("BROWSER_NAME");
+        String browserType = System.getProperty("browserName", "chrome");
         String path = System.getProperty("user.dir") + File.separator + "drivers" + File.separator;
         String os = System.getProperty("os.name").toLowerCase();
 
