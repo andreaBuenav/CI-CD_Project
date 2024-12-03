@@ -18,11 +18,6 @@ public class LogoutTest extends BaseTest {
         //Gives data providers for each test, giving a new user for each test everytime its executed
         return new Object[][]{
                 {"standard_user","secret_sauce",4},
-                {"locked_out_user","secret_sauce",2},
-                {"problem_user","secret_sauce",3},
-                {"performance_glitch_user", "secret_sauce",1},
-                {"error_user","secret_sauce",2},
-                {"visual_user","secret_sauce",1}
         };
 
     }

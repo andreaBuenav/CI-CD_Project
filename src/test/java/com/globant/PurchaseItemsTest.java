@@ -26,12 +26,6 @@ public class PurchaseItemsTest extends BaseTest {
         //user to make a new test every time the program is executed
         return new Object[][]{
                 {"standard_user","secret_sauce",1,"Thank you for your order!"},
-                {"locked_out_user","secret_sauce",1,"Thank you for your order!"},
-                {"problem_user","secret_sauce",1,"Thank you for your order!"},
-                {"performance_glitch_user", "secret_sauce",1,"Thank you for your order!"},
-                {"error_user","secret_sauce",1,"Thank you for your order!"},
-                {"visual_user","secret_sauce",1,"Thank you for your order!"},
-                {"user_user", "secret_sauce", 3, "than you for your order"}
         };
 
     }

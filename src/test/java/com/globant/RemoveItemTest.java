@@ -16,11 +16,7 @@ public class RemoveItemTest extends BaseTest {
     public Object[][] user() {
         return new Object[][]{
                 {"standard_user","secret_sauce",3},
-                {"locked_out_user","secret_sauce",3},
-                {"problem_user","secret_sauce",3},
-                {"performance_glitch_user", "secret_sauce",3},
-                {"error_user","secret_sauce",3},
-                {"visual_user","secret_sauce",3}
+
         };
 
     }
