@@ -15,9 +15,17 @@ public class MainDriver {
         options.addArguments("--headless");
 
         String browserType = System.getenv("BROWSER_NAME");
-        String path = System.getProperty("user.dir");
+        String path = System.getProperty("user.dir") + File.separator + "drivers" + File.separator;
+        String os = System.getProperty("os.name").toLowerCase();
+
         if (browserType == null || browserType.equalsIgnoreCase("chrome")) {
-            System.setProperty("webdriver.chrome.driver", path + File.separator + "drivers" + File.separator + "chromedriver.exe");
+            if (os.contains("win")) {
+                System.setProperty("webdriver.chrome.driver", path + "chromedriver.exe");
+            } else if (os.contains("nix") || os.contains("nux")) { // Para Linux
+                System.setProperty("webdriver.chrome.driver", path + "chromedriver");
+            } else {
+                throw new IllegalArgumentException("Unsupported operating system: " + os);
+            }
             driver = new ChromeDriver(options);
         } else {
             throw new IllegalArgumentException("Unsupported browser: " + browserType);
