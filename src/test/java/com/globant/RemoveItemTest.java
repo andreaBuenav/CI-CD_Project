@@ -1,5 +1,7 @@
 package com.globant;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Step;
 import utils.baseTest.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
@@ -20,7 +22,8 @@ public class RemoveItemTest extends BaseTest {
         };
 
     }
-
+    @Step("Remove items test")
+    @Description("user logs in and then selects some items, and finally deletes them ll")
     @Test(dataProvider = "user", dataProviderClass = RemoveItemTest.class)
     public void secondTest(String username, String password, int item){
         LoginPage loginPage = loadFirstPage();

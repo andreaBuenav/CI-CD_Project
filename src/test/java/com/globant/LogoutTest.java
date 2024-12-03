@@ -1,5 +1,7 @@
 package com.globant;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Step;
 import utils.baseTest.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
@@ -21,6 +23,8 @@ public class LogoutTest extends BaseTest {
         };
 
     }
+    @Step("Logout test")
+    @Description("user logs in and then logs out")
     @Test(dataProvider = "user", dataProviderClass = LogoutTest.class)
     public void thirdTest(String username, String password, int item){
         LoginPage loginPage = loadFirstPage();
