@@ -34,7 +34,7 @@ jobs:
       - name: Setup JDK
         uses: actions/setup-java@v2
         with:
-          java-version: '11'  # Cambia según la versión de JDK que necesites
+          java-version: '23' 
 
       - name: Build with Maven
         run: mvn clean package
