@@ -46,10 +46,6 @@ jobs:
 
       - name: Run tests
         run: mvn verify -DbrowserName=${{ github.event.inputs.browserName || 'chrome' }}
-      
-      - name: Generate Allure report
-        run: mvn allure:report
-        if: success()
 
       - name: Get Allure history
         uses: actions/checkout@v3
@@ -58,6 +54,10 @@ jobs:
         with:
             ref: gh-pages
             path: gh-pages
+      
+      - name: Generate Allure report
+        run: mvn allure:report
+        if: success()
 
     
       - name: Allure report action
