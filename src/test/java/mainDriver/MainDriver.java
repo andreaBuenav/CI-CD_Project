@@ -8,7 +8,7 @@ import java.io.File;
 
 public class MainDriver {
 
-    private WebDriver driver;
+    private final WebDriver driver;
 
     public MainDriver( ) {
         ChromeOptions options = new ChromeOptions();
@@ -17,13 +17,13 @@ public class MainDriver {
         String browserType = System.getenv("BROWSER_NAME");
         String path = System.getProperty("user.dir");
         if (browserType == null || browserType.equalsIgnoreCase("chrome")) {
-            System.setProperty("webdriver.chrome.driver", path + File.separator + "drivers" + File.separator + "chromedriver");
+            System.setProperty("webdriver.chrome.driver", path + File.separator + "drivers" + File.separator + "chromedriver.exe");
             driver = new ChromeDriver(options);
         } else {
             throw new IllegalArgumentException("Unsupported browser: " + browserType);
         }
-
     }
+
 
     public WebDriver getDriver() {
         return this.driver;
