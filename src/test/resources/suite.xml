@@ -2,6 +2,8 @@
 <suite name="example test suite" verbose="1">
     <listeners>
         <listener class-name="utils.Listener"/>
+        <listener class-name="io.qameta.allure.testng.AllureTestNg" />
+
     </listeners>
     <parameter name="url" value="https://www.saucedemo.com/"/>
     <parameter name="titleT1" value="Thank you for your order!"/>
