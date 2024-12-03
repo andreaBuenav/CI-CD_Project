@@ -55,12 +55,6 @@ jobs:
             ref: gh-pages
             path: gh-pages
 
-
-      - name: Generate Allure report
-        run: mvn allure:report
-        if: success()
-
-
       - name: Allure report action
         uses: simple-elf/allure-report-action@master
         if: steps.build.outcome == 'success'
