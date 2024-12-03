@@ -38,11 +38,14 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
+      - name: Make chromedriver executable
+        run: chmod +x ./drivers/chromedriver
+      
       - name: Build with Maven
         run: mvn clean package
-
+        
       - name: Run tests
-        run: mvn -DbrowserName=${{ github.event.inputs.browserName || 'chrome' }} verify
+        run: mvn verify -DbrowserName=${{ github.event.inputs.browserName || 'chrome' }}
 
       - name: Get Allure history
         uses: actions/checkout@v3
