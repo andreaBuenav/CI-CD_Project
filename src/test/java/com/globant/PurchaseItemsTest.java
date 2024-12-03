@@ -2,7 +2,6 @@ package com.globant;
 
 
 import io.qameta.allure.Description;
-import io.qameta.allure.Step;
 import utils.baseTest.BaseTest;
 
 import org.testng.Assert;
@@ -32,10 +31,9 @@ public class PurchaseItemsTest extends BaseTest {
 
     }
     //Select a random item and purchase it
-    @Step("Purchase item test")
-    @Description("user logs in and then purchases some items")
     @Test(dataProvider = "user", dataProviderClass = PurchaseItemsTest.class)
-public void firstTest(String username,String password,int item,String title){
+    @Description("user logs in and then purchases some items")
+    public void firstTest(String username,String password,int item,String title){
         //All page loads
         LoginPage login = loadFirstPage();
         HomePage home = new HomePage(loadFirstPage().getDriver());
