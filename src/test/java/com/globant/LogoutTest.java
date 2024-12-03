@@ -13,7 +13,7 @@ import utils.Listener;
 
 @Listeners(Listener.class)
 public class LogoutTest extends BaseTest {
-
+//..
     @DataProvider
     public Object[][] user() {
         //Gives data providers for each test, giving a new user for each test everytime its executed

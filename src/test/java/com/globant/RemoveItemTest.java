@@ -13,6 +13,8 @@ import utils.Listener;
 
 @Listeners(Listener.class)
 public class RemoveItemTest extends BaseTest {
+    //..
+
     @DataProvider
     public Object[][] user() {
         return new Object[][]{
