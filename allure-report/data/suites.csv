@@ -1,0 +1,4 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"user logs in and then selects some items, and finally deletes them ll","1234","secondTest","example test suite","Tue Dec 03 17:13:42 UTC 2024","passed","Tue Dec 03 17:13:43 UTC 2024","com.globant.RemoveItemTest","test2","com.globant.RemoveItemTest","secondTest"
+"user logs in and then logs out","1789","thirdTest","example test suite","Tue Dec 03 17:13:43 UTC 2024","passed","Tue Dec 03 17:13:45 UTC 2024","com.globant.LogoutTest","test2","com.globant.LogoutTest","thirdTest"
+"user logs in and then purchases some items","1326","firstTest","example test suite","Tue Dec 03 17:13:40 UTC 2024","passed","Tue Dec 03 17:13:41 UTC 2024","com.globant.PurchaseItemsTest","test2","com.globant.PurchaseItemsTest","firstTest"
