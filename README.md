@@ -7,6 +7,7 @@
  [Chromedriver](#chromedriver)<br/>
  [Contact](#contact)<br/>
  [Clone this](#clone) <br/>
+ [Report](#report)<br/>
 
  <br/>
  <br/>
@@ -45,4 +46,9 @@ for any questions or suggestions pleasse contact to this mail:<br/>
 
 ### Clone
 git clone https://github.com/andreaBuenav/CI-CD_Project
+
+### Report
+# Informe de Allure
+
+Para ver el informe, visita: [Informe de Allure](http://192.168.100.195:62470/index.html)
 
